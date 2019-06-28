@@ -1,6 +1,8 @@
 from tkinter import *
 
 window=Tk()
+window.geometry("1200x600")
+window.resizable(0,0)
 pic1=PhotoImage(file="C:\\Users\\LENOVO\\Pictures\\b1.png")
 pic11 = pic1
 pic2=PhotoImage(file="C:\\Users\\LENOVO\\Pictures\\b3.png")
@@ -25,14 +27,14 @@ def addCustomer():
     c.pack()
 
 
-c=Canvas(window,bg='red',width=1200,height=600)
+
 pic=PhotoImage(file="C:\\Users\\LENOVO\\Pictures\\br.png")
 background=Label(window,image=pic)
 background.place(x=0,y=0,relwidth=1,relheight=1)
 
 
 
-c.pack()
+
 lab=Label(window,text="M",bg="black",fg="white",font=("ARIAL",35)).place(x=390,y=50)
 lab=Label(window,text="A",font=("ARIAL",30)).place(x=440,y=45)
 lab=Label(window,text="R",bg="black",fg="white",font=("ARIAL",35)).place(x=480,y=50)
