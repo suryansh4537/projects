@@ -11,7 +11,7 @@ class dbHelper():
 
     def saveCustomerInDB(self,customer):
 
-        sql = f"insert into project1 values(null, '{customer.name}', '{customer.phone}', '{customer.email}',{customer.loyalty_pts},{customer.uid})"
+        sql = f"insert into project1 values(null, '{customer.name}', '{customer.phone}', '{customer.email}',{customer.lp},{customer.uid})"
 
         cursor.execute(sql)
 
@@ -46,11 +46,12 @@ class dbHelper():
 
         cursor.execute(sql)
         rows = cursor.fetchall()
-        print(rows)
+        for i in rows:
+            print(i)
 
-    def updatelp(self,abc):
+    def updatelp(self,abc,uid):
 
-        sql="update project1 set lp={}".format(abc.lp)
+        sql="update project1 set lp={} where uid={}".format(abc.lp,uid)
         cursor.execute(sql)
         con.commit()
 
@@ -148,7 +149,7 @@ if choice == 2:
         cost=int(input("Enter cost="))
         if cost>500 and cost<1000:
             cRef.lp=abs((10/100)*cost-int(cRef.lp))
-            db.updatelp(cRef)
+            db.updatelp(cRef,uid)
         elif cost>=1000:
             cRef.lp=abs()
 
