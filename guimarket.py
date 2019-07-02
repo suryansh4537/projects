@@ -68,15 +68,41 @@ def newCustomer():
 
 
 def existingCustomer():
+
+    def Continue():
+        def update():
+            cRef = customer(None, None, None, None, None, None)
+            db.fetchCustomer(int(e1.get()))
+
+        win1.destroy()
+        win2 =Toplevel(window)
+
+        c = Canvas(win2, bg='red', width=900, height=400)
+
+        background = Label(win2, image=pic11)
+        background.place(x=0, y=0, relwidth=1, relheight=1)
+
+        l1 = Button(win2, text="UPDATE CUSTOMER",width=50,height=2, bg="PURPLE",bd=0, fg="WHITE").place(x=280, y=140)
+
+        l1 = Button(win2, text="DELETE CUSTOMER",width=50,height=2, bg="PURPLE",bd=0, fg="WHITE").place(x=280, y=200)
+
+        B3 = Button(win2, text="SHOPPING",width=50,height=2, bg="PURPLE",bd=0 ,fg="WHITE").place(x=280, y=260)
+
+        b1 = Button(win2, text="Exit", bd=0, bg="black", fg="white", width="30", height=2, command=win2.destroy).place(x=350, y=330)
+
+        c.pack()
+
+
     win1=Toplevel(window)
     c=Canvas(win1,bg='red',width=900,height=400)
 
     background=Label(win1,image=pic11)
     background.place(x=0,y=0,relwidth=1,relheight=1)
-    lt = Label(win1, text="ENTER CUSTOMER ID", fg="white",bg="black",font=(20)).place(x=330, y=150)
+    lt = Label(win1, text="ENTER CUSTOMER ID", fg="white",bg="black",font=(20)).place(x=400, y=100)
 
-    e1=Entry(win1,width=100).place(x=150,y=200)
-    B2 = Button(win1, text="CONTINUE", bd=0, bg="black", fg="white", width="30", height=2).place(x=350,y=270)
+    e1=Entry(win1,width=50)
+    e1.place(x=370,y=190)
+    B2 = Button(win1, text="CONTINUE", bd=0, bg="black", fg="white", width="30", height=2,command=Continue).place(x=350,y=270)
 
     exit = Button(win1, text="EXIT", bd=0, bg="black", fg="white", width="30", height=2, command=win1.destroy).place(x=350,y=330)
     c.pack()
