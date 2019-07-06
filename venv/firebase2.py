@@ -8,29 +8,18 @@ db=firestore.client()
 class DBhelper:
 
     def addCustomer(self,cref):
-
-        cref.Name=input("Enter name=")
-        cref.Email=input("Enter Email=")
-        cref.Phone=input("Enter Phone=")
-        cref.lp=100
-        cref.uid=random.randint(1000,9999)
         data=cref.__dict__
         db.collection("Customer").document("{}".format(cref.uid)).set(data)
-        print("Data Added Succesfully\nYour uid={}".format(cref.uid))
+
 
     def updateCustomer(self,cref):
-        cref.uid=input("Enter uid to update the customer=")
-        cref.Name=input("Enter name=")
-        cref.Phone=input("Enter phone=")
-        cref.Email=input("Enter email=")
-        cref.lp=100
+
         d1=db.collection("Customer").document("{}".format(cref.uid))
-        data=cref.__dict__
-        d1.update(data)
+        d1.update({'Name':cref.Name,'Email':cref.Email,'Phone':cref.Phone})
         print("Updated succesfully")
 
     def deleteCustomer(self,cref):
-        cref.uid=input("Enter uid to be Deleted=")
+
         d1=db.collection("Customer").document("{}".format(cref.uid)).delete()
         print("Customer deleted")
 
@@ -67,9 +56,11 @@ class DBhelper:
 
     def fetchOne(self,cref):
         cref.uid=input("Enter uid to fetch=")
-        d1=db.collection("Customer").where("uid","==",cref.uid).stream()
-
-        for i in d1:
+        d1=db.collection(u"Customer")
+        d2=d1.where(u"uid",u'==',cref.uid)
+        data=d2.stream()
+        print(data,d2)
+        for i in data:
             print(i.to_dict())
 
     def showAll(self):
@@ -93,10 +84,10 @@ class Customer:
 cref=Customer(None,None,None,None,None)
 db1=DBhelper()
 #db1.addCustomer(cref)
-#db1.fetchOne(cref)
+db1.fetchOne(cref)
 #db1.updateCustomer(cref)
 #db1.deleteCustomer(cref)
 #db1.showAll()
 #cost=int(input("Enter cost="))
-db1.fetchOne(cref)
+#db1.fetchOne(cref)
 

@@ -1,0 +1,294 @@
+from tkinter import *
+from tkinter import messagebox
+import firebase_admin
+from firebase_admin import credentials
+from firebase_admin import firestore
+from firebase2 import *
+import random
+
+cred=credentials.Certificate("suryansh1-firebase-adminsdk-vpxcz-f3ad779206.json")
+#firebase_admin.initialize_app(cred)
+
+db=firestore.client()
+
+window=Tk()
+window.geometry("1200x600")
+window.resizable(0,0)
+pic1=PhotoImage(file="C:\\Users\\LENOVO\\Videos\\Captures\\h4.png")
+pic11 = pic1
+pic2=PhotoImage(file="C:\\Users\\LENOVO\\Videos\\Captures\\h4.png")
+pic22 = pic2
+db1=DBhelper()
+def newCustomer():
+    def popup(s,s1):
+        messagebox.showinfo(s,s1)
+
+    def add():
+        cref=Customer(None,None,None,100,None)
+
+        cref.Name=e1.get()
+        cref.Phone=e2.get()
+        cref.Email=e3.get()
+        cref.uid=random.randint(1000,9999)
+        db1.addCustomer(cref)
+
+        if len(e1.get())==0:
+            messagebox.showerror("Error","Name left Empty")
+
+
+        elif len(e2.get())==0:
+            messagebox.showerror("Error","Phone left Empty")
+
+
+        elif len(e3.get())==0:
+            messagebox.showerror("Error","Email left Empty")
+
+        else:
+            win1.destroy()
+            popup("ADDED",F"YOUR UID=f{cref.uid}")
+
+
+
+
+    win1=Toplevel(window)
+    c=Canvas(win1,bg='red',width=900,height=400)
+
+    background=Label(win1,image=pic11)
+    background.place(x=0,y=0,relwidth=1,relheight=1)
+    l1 = Label(win1, text="C", fg="white",bg="black",font=("ARIAL",20)).place(x=200, y=20)
+    l1 = Label(win1, text="U", bg="white", fg="black", font=("ARIAL", 20)).place(x=230, y=20)
+    l1 = Label(win1, text="S", fg="white", bg="black", font=("ARIAL", 25)).place(x=260, y=20)
+    l1 = Label(win1, text="T", bg="white", fg="black", font=("ARIAL", 20)).place(x=290, y=20)
+    l1 = Label(win1, text="O", fg="white", bg="black", font=("ARIAL", 25)).place(x=310, y=20)
+    l1 = Label(win1, text="M", bg="white", fg="black", font=("ARIAL", 20)).place(x=340, y=20)
+    l1 = Label(win1, text="E", fg="white", bg="black", font=("ARIAL", 25)).place(x=370, y=20)
+    l1 = Label(win1, text="R", bg="white", fg="black", font=("ARIAL", 20)).place(x=400, y=20)
+    l1 = Label(win1, text="D", fg="white", bg="black", font=("ARIAL", 25)).place(x=460, y=20)
+    l1 = Label(win1, text="E", bg="white", fg="black", font=("ARIAL", 20)).place(x=490, y=20)
+    l1 = Label(win1, text="T", fg="white", bg="black", font=("ARIAL", 25)).place(x=520, y=20)
+    l1 = Label(win1, text="A", bg="white", fg="black", font=("ARIAL", 20)).place(x=550, y=20)
+    l1 = Label(win1, text="I", fg="white", bg="black", font=("ARIAL", 25)).place(x=580, y=20)
+    l1 = Label(win1, text="L", bg="white", fg="black", font=("ARIAL", 20)).place(x=610, y=20)
+    l1 = Label(win1, text="S", fg="white", bg="black", font=("ARIAL", 25)).place(x=640, y=20)
+    l1=Label(win1,text="NAME",bg="black",fg="white",font=("ARIAL",15)).place(x=220,y=110)
+    e1=Entry(win1,width=50)
+    e1.place(x=350,y=120)
+    l1=Label(win1,text="PHONE",bg="black",fg="white",font=("ARIAL",15)).place(x=220,y=165)
+    e2=Entry(win1,width=50)
+    e2.place(x=350,y=170)
+    l1=Label(win1,text="EMAIL",bg="black",fg="white",font=("ARIAL",15)).place(x=220,y=220)
+    e3=Entry(win1,width=50)
+    e3.place(x=350,y=220)
+    b1 =Button(win1, text="ADD", bd=0, bg="black", fg="white", width="30", height=2,command=add).place(x=350,y=300)
+    exit = Button(win1, text="EXIT", bd=0, bg="black", fg="white", width="30", height=2, command=win1.destroy).place(x=350, y=340)
+    c.pack()
+
+uid=0
+
+def existingCustomer():
+    def check():
+            uid=ex.get()
+            cref = Customer(None, None, None, None, None)
+
+            def updateCustomer():
+
+                def popup(s, s1):
+                    messagebox.showinfo(s, s1)
+
+                def add():
+
+                    cref.Name = e1.get()
+                    cref.Phone = e2.get()
+                    cref.Email = e3.get()
+                    cref.uid=uid
+                    db1.updateCustomer(cref)
+
+                    if len(e1.get()) == 0:
+                        messagebox.showerror("Error", "Name left Empty")
+                        win4.destroy
+
+                    elif len(e2.get()) == 0:
+                        messagebox.showerror("Error", "Phone left Empty")
+                        win4.destroy
+
+                    elif len(e3.get()) == 0:
+                        messagebox.showerror("Error", "Email left Empty")
+                        win4.destroy
+                    else:
+                        popup("UPDATED", "YOUR DETAILS GET UPDATED")
+                        win4.destroy
+
+                win4 = Toplevel(window)
+                win3.destroy()
+                c = Canvas(win4, bg='red', width=900, height=400)
+
+                background = Label(win4, image=pic11)
+                background.place(x=0, y=0, relwidth=1, relheight=1)
+                l1 = Label(win4, text="C", fg="white", bg="black", font=("ARIAL", 20)).place(x=200, y=20)
+                l1 = Label(win4, text="U", bg="white", fg="black", font=("ARIAL", 20)).place(x=230, y=20)
+                l1 = Label(win4, text="S", fg="white", bg="black", font=("ARIAL", 25)).place(x=260, y=20)
+                l1 = Label(win4, text="T", bg="white", fg="black", font=("ARIAL", 20)).place(x=290, y=20)
+                l1 = Label(win4, text="O", fg="white", bg="black", font=("ARIAL", 25)).place(x=310, y=20)
+                l1 = Label(win4, text="M", bg="white", fg="black", font=("ARIAL", 20)).place(x=340, y=20)
+                l1 = Label(win4, text="E", fg="white", bg="black", font=("ARIAL", 25)).place(x=370, y=20)
+                l1 = Label(win4, text="R", bg="white", fg="black", font=("ARIAL", 20)).place(x=400, y=20)
+                l1 = Label(win4, text="D", fg="white", bg="black", font=("ARIAL", 25)).place(x=460, y=20)
+                l1 = Label(win4, text="E", bg="white", fg="black", font=("ARIAL", 20)).place(x=490, y=20)
+                l1 = Label(win4, text="T", fg="white", bg="black", font=("ARIAL", 25)).place(x=520, y=20)
+                l1 = Label(win4, text="A", bg="white", fg="black", font=("ARIAL", 20)).place(x=550, y=20)
+                l1 = Label(win4, text="I", fg="white", bg="black", font=("ARIAL", 25)).place(x=580, y=20)
+                l1 = Label(win4, text="L", bg="white", fg="black", font=("ARIAL", 20)).place(x=610, y=20)
+                l1 = Label(win4, text="S", fg="white", bg="black", font=("ARIAL", 25)).place(x=640, y=20)
+                l1 = Label(win4, text="NAME", bg="black", fg="white", font=("ARIAL", 15)).place(x=220, y=110)
+                e1 = Entry(win4, width=50)
+                e1.place(x=350, y=120)
+                l1 = Label(win4, text="PHONE", bg="black", fg="white", font=("ARIAL", 15)).place(x=220, y=165)
+                e2 = Entry(win4, width=50)
+                e2.place(x=350, y=170)
+                l1 = Label(win4, text="EMAIL", bg="black", fg="white", font=("ARIAL", 15)).place(x=220, y=220)
+                e3 = Entry(win4, width=50)
+                e3.place(x=350, y=220)
+                b1 = Button(win4, text="UPDATE", bd=0, bg="black", fg="white", width="30", height=2, command=add).place(
+                    x=350, y=300)
+                exit = Button(win4, text="EXIT", bd=0, bg="black", fg="white", width="30", height=2,
+                              command=win4.destroy).place(x=350, y=340)
+                c.pack()
+
+            def deleteCustomer():
+                def popup(s, s1):
+                    messagebox.showinfo(s, s1)
+
+                cref.uid=uid
+                db1.deleteCustomer(cref)
+
+                popup("DELETED", "YOUR CUSTOMER HAS BEEN DELETED")
+                win3.destroy
+
+            def shopping():
+
+                def popup(s, s1):
+                    messagebox.showinfo(s, s1)
+
+
+
+
+                def abc():
+
+                    cost = int(e5.get())
+
+                    popup("SHOPPING","PAY  {} Rs".format(cost))
+                    win5.destroy
+
+                win5 = Toplevel(window)
+                win3.destroy()
+                c = Canvas(win5, bg='red', width=900, height=400)
+                background = Label(win5, image=pic11)
+                background.place(x=0, y=0, relwidth=1, relheight=1)
+                lt = Label(win5, text="ENTER THE AMOUNT OF SHOPPING ", fg="white", bg="black", font=("ARIAL", 20)).place(x=250,y=80)
+                e5 = Entry(win5, width=50)
+                e5.place(x=300, y=190)
+                b1 = Button(win5, text="ENTER", bd=0, bg="black", fg="white", width="30", height=2, command=abc).place(x=350,y=270)
+
+                exit = Button(win5, text="EXIT", bd=0, bg="black", fg="white", width="30", height=2,command=win5.destroy).place(x=350, y=330)
+                c.pack()
+
+
+
+            win3 = Toplevel(window)
+            win2.destroy()
+            c = Canvas(win3, bg='red', width=900, height=400)
+
+            background = Label(win3, image=pic11)
+            background.place(x=0, y=0, relwidth=1, relheight=1)
+            l1 = Label(win3, text="WHAT DO YOU WANT TO CHOOSE", fg="grey", bg="white", font=("ARIAL", 20)).place(x=260, y=20)
+            b = Button(win3, text="Update Customer Details", bg="white", bd=0, width=50, height=2, fg="black",command=updateCustomer).place(x=300, y=120)
+            b2 = Button(win3, text="Delete the customer Details", bg="white", bd=0, width=50, height=2, fg="black",command=deleteCustomer).place(x=300, y=180)
+            b3 = Button(win3, text="Shopping", bg="sky blue", bd=0, width=50, height=2, fg="black",command= shopping ).place(x=300, y=240)
+            exit = Button(win3, text="EXIT", bd=0, bg="black", fg="white", width="30", height=2,command=win3.destroy).place(x=350, y=330)
+            c.pack()
+
+
+
+
+    win2 = Toplevel(window)
+    c = Canvas(win2, bg='red', width=900, height=400)
+
+    background = Label(win2, image=pic11)
+    background.place(x=0, y=0, relwidth=1, relheight=1)
+    l1 = Label(win2, text="E", fg="white", bg="black", font=("ARIAL", 20)).place(x=200, y=60)
+    l1 = Label(win2, text="N", bg="white", fg="black", font=("ARIAL", 20)).place(x=230, y=60)
+    l1 = Label(win2, text="T", fg="white", bg="black", font=("ARIAL", 25)).place(x=260, y=60)
+    l1 = Label(win2, text="E", bg="white", fg="black", font=("ARIAL", 20)).place(x=290, y=60)
+    l1 = Label(win2, text="R", fg="white", bg="black", font=("ARIAL", 25)).place(x=310, y=60)
+    l1 = Label(win2, text="C", bg="white", fg="black", font=("ARIAL", 20)).place(x=350, y=60)
+    l1 = Label(win2, text="U", fg="white", bg="black", font=("ARIAL", 25)).place(x=380, y=60)
+    l1 = Label(win2, text="S", bg="white", fg="black", font=("ARIAL", 20)).place(x=410, y=60)
+    l1 = Label(win2, text="T", fg="white", bg="black", font=("ARIAL", 25)).place(x=440, y=60)
+    l1 = Label(win2, text="O", bg="white", fg="black", font=("ARIAL", 20)).place(x=470, y=60)
+    l1 = Label(win2, text="M", fg="white", bg="black", font=("ARIAL", 25)).place(x=500, y=60)
+    l1 = Label(win2, text="E", bg="white", fg="black", font=("ARIAL", 20)).place(x=530, y=60)
+    l1 = Label(win2, text="R", fg="white", bg="black", font=("ARIAL", 25)).place(x=560, y=60)
+    l1 = Label(win2, text="I", bg="white", fg="black", font=("ARIAL", 20)).place(x=610, y=60)
+    l1 = Label(win2, text="D", fg="white", bg="black", font=("ARIAL", 25)).place(x=640, y=60)
+
+
+    ex = Entry(win2, width=50)
+    ex.place(x=290, y=200)
+
+    B2 = Button(win2, text="CONTINUE", bd=0, bg="black", fg="white", width="30", height=2, command=check).place(x=350, y=270)
+
+    exit = Button(win2, text="EXIT", bd=0, bg="black", fg="white", width="30", height=2, command=win2.destroy).place(x=350, y=330)
+    c.pack()
+
+
+
+
+
+
+
+
+
+
+
+def showAll():
+    win1=Toplevel(window)
+    c=Canvas(win1,bg='red',width=900,height=400)
+
+    background=Label(win1,image=pic11)
+    background.place(x=0,y=0,relwidth=1,relheight=1)
+    lt = Label(win1, text="CUSTOMER DETAILS", fg="white",bg="black",font=(20)).place(x=330, y=20)
+    l1=Label(win1,text="NAME",bg="grey",fg="black",font=(14)).place(x=90,y=80)
+    e1=Entry(win1,width=100).place(x=250,y=83)
+    l1=Label(win1,text="PHONE",bg="grey",fg="black",font=(14)).place(x=90,y=140)
+    e1=Entry(win1,width=100).place(x=250,y=143)
+    l1=Label(win1,text="EMAIL",bg="grey",fg="black",font=(14)).place(x=90,y=200)
+    e1=Entry(win1,width=100).place(x=250,y=203)
+    l1=Label(win1,text="BOUGHT",bg="grey",fg="black",font=(14)).place(x=90,y=260)
+    e1=Entry(win1,width=100).place(x=250,y=263)
+    exit = Button(win1, text="EXIT", bd=0, bg="black", fg="white", width="30", height=2, command=win1.destroy).place(x=350,y=330)
+    c.pack()
+
+
+
+pic=PhotoImage(file="C:\\Users\\LENOVO\\Videos\\Captures\\G3.png")
+background=Label(window,image=pic1)
+background.place(x=0,y=0,relwidth=1,relheight=1)
+
+
+
+
+lab=Label(window,text="M",bg="black",fg="white",font=("ARIAL",35)).place(x=390,y=50)
+lab=Label(window,text="A",font=("ARIAL",30)).place(x=440,y=45)
+lab=Label(window,text="R",bg="black",fg="white",font=("ARIAL",35)).place(x=480,y=50)
+lab=Label(window,text="K",font=("ARIAL",30)).place(x=520,y=45)
+lab=Label(window,text="E",bg="black",fg="white",font=("ARIAL",35)).place(x=560,y=50)
+lab=Label(window,text="T",font=("ARIAL",30)).place(x=600,y=45)
+lab=Label(window,text="A",bg="black",fg="white",font=("ARIAL",35)).place(x=665,y=45)
+lab=Label(window,text="P",font=("ARIAL",30)).place(x=705,y=50)
+lab=Label(window,text="P",bg="black",fg="white",font=("ARIAL",35)).place(x=745,y=45)
+b=Button(window,text="NEW CUSTOMER",bg="white",bd=0,width=50,height=2,fg="black",command=newCustomer).place(x=420,y=240)
+b=Button(window,text="EXISTING CUSTOMER",bg="white",bd=0,width=50,height=2,fg="black",command=existingCustomer).place(x=420,y=300)
+b=Button(window,text="SHOW ALL CUSTOMERS",bg="white",bd=0,width=50,height=2,fg="black",command=showAll).place(x=420,y=360)
+
+exit=Button(window,text="EXIT",bd=0,bg="black",fg="white",width="30",height=2,command=window.destroy).place(x=500,y=500)
+window.mainloop()

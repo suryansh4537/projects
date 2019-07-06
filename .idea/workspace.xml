@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="017d551a-2389-4d32-bb6c-3a369209f2ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/venv/firebase1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/venv/firebase2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venv/frontend1.2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/venv/firebase2.py" beforeDir="false" afterPath="$PROJECT_DIR$/venv/firebase2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +17,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/venv/firebase1.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="59" column="18" lean-forward="true" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+            <state relative-caret-position="1232">
+              <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -29,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/venv/firebase2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
+            <state relative-caret-position="263">
+              <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -39,12 +39,36 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/venv/project1backend.py">
+        <entry file="file://$PROJECT_DIR$/venv/frontend1.2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="106" lean-forward="true" selection-start-line="75" selection-start-column="4" selection-end-line="106" />
+            <state relative-caret-position="3894">
+              <caret line="183" column="56" selection-start-line="183" selection-start-column="56" selection-end-line="183" selection-end-column="56" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/finalgui.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="6028">
+              <caret line="278" selection-start-line="278" selection-end-line="278" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/venv/project1frontend.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,6 +104,7 @@
         <option value="$PROJECT_DIR$/venv/project1frontend.py" />
         <option value="$PROJECT_DIR$/venv/finalgui.py" />
         <option value="$PROJECT_DIR$/venv/firebase1.py" />
+        <option value="$PROJECT_DIR$/venv/frontend1.2.py" />
         <option value="$PROJECT_DIR$/venv/firebase2.py" />
       </list>
     </option>
@@ -105,11 +130,6 @@
               <item name="program1" type="b2602c69:ProjectViewProjectNode" />
               <item name="program1" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="program1" type="b2602c69:ProjectViewProjectNode" />
-              <item name="program1" type="462c0819:PsiDirectoryNode" />
-              <item name="venv" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -118,7 +138,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/venv" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -203,7 +223,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="project1backend" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="frontend1.2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="program1" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -215,7 +235,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/project1backend.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/venv/frontend1.2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -248,10 +268,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.firebase2" />
+        <item itemvalue="Python.frontend1.2" />
         <item itemvalue="Python.firebase1" />
         <item itemvalue="Python.finalgui" />
         <item itemvalue="Python.project1frontend" />
-        <item itemvalue="Python.project1backend" />
       </list>
     </recent_temporary>
   </component>
@@ -301,18 +321,25 @@
       <option name="project" value="LOCAL" />
       <updated>1562071094519</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="firebase try">
+      <created>1562247747564</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1562247747564</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13738441" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.120871864" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37623763" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.37340876" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -330,7 +357,8 @@
     <MESSAGE value="gui" />
     <MESSAGE value="marketproject" />
     <MESSAGE value="finalgui" />
-    <option name="LAST_COMMIT_MESSAGE" value="finalgui" />
+    <MESSAGE value="firebase try" />
+    <option name="LAST_COMMIT_MESSAGE" value="firebase try" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/venv/try.py">
@@ -415,26 +443,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/project1frontend.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1935">
-          <caret line="216" lean-forward="true" selection-start-line="216" selection-end-line="216" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/finalgui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6116">
-          <caret line="278" selection-start-line="278" selection-end-line="278" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/suryansh1-firebase-adminsdk-vpxcz-f3ad779206.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -445,30 +453,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/venv/firebase1.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="59" column="18" lean-forward="true" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/project1backend.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="106" lean-forward="true" selection-start-line="75" selection-start-column="4" selection-end-line="106" />
+        <state relative-caret-position="2288">
+          <caret line="106" selection-start-line="75" selection-start-column="4" selection-end-line="106" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/venv/firebase1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1232">
+          <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/frontend1.2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3894">
+          <caret line="183" column="56" selection-start-line="183" selection-start-column="56" selection-end-line="183" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/finalgui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6028">
+          <caret line="278" selection-start-line="278" selection-end-line="278" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/project1frontend.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/venv/firebase2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="71" column="20" selection-start-line="71" selection-start-column="20" selection-end-line="71" selection-end-column="20" />
+        <state relative-caret-position="263">
+          <caret line="59" column="33" selection-start-line="59" selection-start-column="33" selection-end-line="59" selection-end-column="33" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
