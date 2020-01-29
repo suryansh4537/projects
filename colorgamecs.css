@@ -1,0 +1,49 @@
+body{
+	background-color: #232323;
+}
+.top{
+	width:20%;
+	color: white;
+	text-align: center;
+	background-color: #232323;
+	margin: 0 auto;
+	align-content: center;
+	padding:0 auto;
+}
+.nbar{
+	background-color: white;
+	padding: 0 0;
+	margin: 0 auto;
+	align-content: center;
+	text-align: auto;
+}
+.b1{
+	border: 0;
+	background-color: white;
+	margin: 0;
+	padding:0 auto;
+}
+.square{
+	
+	width: 30%;
+	background-color:  red;
+	margin: 1.66%;
+	padding-bottom: 30%;
+	border-radius: 10px;
+	float: left;
+}
+.sq1{
+	height: 50%;
+	width: 50%;
+	margin: 0 auto;
+	
+}
+.black{
+	padding: 50px 50px;
+	background-color:  black;
+	color: white;
+	
+}
+.navbar{
+	padding: 0 0;
+}
